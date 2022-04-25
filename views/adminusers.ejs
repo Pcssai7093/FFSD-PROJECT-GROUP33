@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <link rel="stylesheet" href="/adminnavbar.css">
+    <link rel="stylesheet" href="/adminusers.css">
+    <script defer src="/adminusers.js"></script>
+</head>
+
+<body>
+    <%- include('./partials/adminnavbar.ejs') %>
+
+    <% for(let i=0;i<locals.user_data.length;i++){ %> 
+        <div class="usercont">
+            <div class="userhead">
+                <h3><%= locals.user_data[i].User_name %> </h3>
+
+                <div class="menu-icon">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+            <div class="userbody">
+                <p>Time:<%= locals.user_data[i].createdAt %></p>
+                <p>Full Name:<%= locals.user_data[i].First_name %> <pre></pre> <%= locals.user_data[i].last_name %> </p>
+                <p>Email:<%= locals.user_data[i].Email %> </p>
+                <p>Number:<%= locals.user_data[i].Mob_number %></p>
+                <p>User_block_status:<%=locals.user_data[i].User_Block||'false'%></p>
+                <form action="/userdelete/<%= locals.user_data[i]._id %>" method="post" style="float:left;padding-right: 10px;">
+                    <!-- <input type="text" name="user_id" id="user_id" value=""> -->
+                    <button type="submit" style="cursor:pointer;color:white;background-color:orange;border:3px solid white;border-radius: 10px;">block</button>
+                </form>
+                <form action="/userUnblock/<%= locals.user_data[i]._id||'' %>" method="post">
+                    <button type="submit" style="cursor:pointer;color:white;background-color:rgb(77, 255, 0);border:3px solid white;border-radius: 10px;">Unblock</button>
+                </form>
+            </div>
+        </div>
+    <% } %> 
+    <pre>
+
+
+        
+    </pre>
+</body>
+
+</html>

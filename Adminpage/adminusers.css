@@ -1,0 +1,42 @@
+.usercont{
+    margin:30px auto;
+    width:80%;
+    /* border:2px solid cornflowerblue; */
+    border-bottom: 2px solid white;
+    margin:0px auto;
+    width:50%;
+    padding: 5px;
+
+}
+.userhead{
+    position: relative;
+    /* border:2px solid cornflowerblue; */
+    /* padding: 10px 10px; */
+    border-radius: 5px;
+    padding: 10px 10px;
+}
+
+.userbody{
+    display:none;
+    /* height:100px; */
+    /* background-color: darkcyan; */
+}
+
+.userbody.active{
+    display: block;
+}
+
+.menu-icon{
+    position: absolute;
+    top:5px;
+    right:10px;
+    cursor: pointer;
+}
+
+.menu-icon .bar{
+    display: block;
+    width:25px;
+    height:3px;
+    margin-top: 5px;
+    background-color: white;
+}

@@ -1,0 +1,73 @@
+.landingpage-header{
+    position:fixed;
+    height:50px;
+    /* border: 2px solid black; */
+    width:100%;
+    background-color: #cacaca;
+}
+
+.landingpage-header #logo{
+    color:rgb(0, 0, 0);
+    font-weight: bold;
+    padding-left: 40px;
+    float:left;
+    padding-top: 5px;
+    font-size: larger;
+}
+
+.landingpage-header #navlinks{
+    padding-top: 7px;
+    padding-right: 30px;
+    float:right;
+}
+#navlinks Button{
+    background-color:  #cacaca;
+
+    border-radius: 5px;
+    border: 1px solid rgb(26, 26, 26);
+}
+#navlinks Button a{
+    color:rgb(0, 0, 0);
+    text-decoration: none;
+    margin:0 20px;
+}
+
+.section{
+    display: flex;
+    width:100%;
+    /* margin:0 0px; */
+/* border-bottom: 3px solid cornflowerblue; */
+
+}
+
+.tumbnail-img{
+    /* margin:20px; */
+    width:90vw;
+    /* margin:20px auto;     */
+    margin-left: 40px;  
+}
+
+.left,.right{
+    display: flex;
+    padding: 40px;
+    width:50%;
+    /* float:left; */
+    justify-content: center;
+}
+
+.left p,.right p{
+    font-size: 25px;
+}
+
+
+@media screen and (max-width:1000px){
+    .section{
+        flex-direction: column;
+    }
+    .left,.right{
+        width:100%;
+        /* padding: 20px; */
+    }
+}
+
+

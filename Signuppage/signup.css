@@ -1,0 +1,128 @@
+#ft {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9I1B4bPESiCPgiMy9TfZ8ESM-bmE267EEAyxsPS3VfwIHyiEka630AJjtfnYOE5K3faU&usqp=CAU');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#signup-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height:100vh;
+}
+
+.signup-form{
+  width:100vw;
+  /* height:100vh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.signup-form div{
+  padding-left: 30px;
+}
+
+.form-group{
+  /* margin: 20px; */
+  font-style: oblique;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  box-sizing: border-box;
+  width:100%;
+}
+.err{
+  position:absolute;
+  color:red;
+  /* z-index: 3; */
+}
+
+#signup-btn{
+  /* position:absolute; */
+  bottom:15%;
+  right:45%;
+  color:white;
+  background-color: darkcyan;
+  /* border-radius: 10px; */
+  border: 2px solid white;
+}
+
+#signup-btn:hover{
+  background-color: cornflowerblue;
+}
+
+#backend-err{
+  color:red;
+}
+
+
+@media screen and (max-width:650px){
+  .signup-form{
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     justify-items: center;
+  }
+
+  .signup-form div{
+    padding-left: 0;
+    /* padding: 10px; */
+    /* width:100%; */
+  }
+
+  #signup-btn{
+    /* position:static; */
+  }
+
+  .column{
+    width:100%;
+  }
+
+  #signup-form{
+    width:100%;
+    height:auto;
+    overflow-x: hidden;
+  }
+
+}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 10px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gig Description</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/descpage.css">
+    <link rel="stylesheet" href="/descpage2.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <!-- font awesomne-->
+    <script src="https://kit.fontawesome.com/6f7bb1654d.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/navbar.css">
+    <script defer src="/descpage.js"></script>
+    <!-- <script defer src="navbar.js"></script> -->
+</head>
+
+<body>
+
+    <%- include('./partials/navbar.ejs') %> 
+    <pre>
+    </pre>
+
+    <div class="frame">
+        <div class="content-section">
+            <pre>
+
+                </pre>
+
+         
+
+            <div class="product-title">
+                <h4><%= locals.desc_data.gig_title||'I will Write advanced java programs' %> </h4>
+            </div>
+
+            <div class="product-gallery-conatiner">
+                <div class="product-gallery">
+                    <div class="main-img" id="main-img">
+                        <img src="/<%= locals.desc_data.Gig_img2||'d1.jpg' %>" alt="" class="m">
+                        <img src="/<%= locals.desc_data.Gig_img3||'d2.jpg' %>" alt="" class="m">
+                        <img src="/<%= locals.desc_data.Gig_img4||'d3.jpg' %>" alt="" class="m">
+                        <img src="/<%= locals.desc_data.Gig_img5||'d4.jpg' %>" alt="" class="m">
+                    </div>
+                    <div class="image-grid">
+                        <img src="/<%= locals.desc_data.Gig_img2||'d1.jpg' %>" alt="" class="g gal-img">
+                        <img src="/<%= locals.desc_data.Gig_img3||'d2.jpg' %>" alt="" class="g gal-img">
+                        <img src="/<%= locals.desc_data.Gig_img4||'d3.jpg' %>" alt="" class="g gal-img">
+                        <img src="/<%= locals.desc_data.Gig_img5||'d4.jpg' %>" alt="" class="g gal-img">
+                    </div>
+                </div>
+            </div>
+
+
+            <pre>
+
+
+                    </pre>
+            <div class="product-package">
+                <div class="category-setion">
+                    <div class="category">Basic</div>
+                    <div class="category">Standard</div>
+                    <div class="category">Premium</div>
+                </div>
+
+                <div class="product-package-body">
+                    <div class="price">Rs <%= locals.desc_data.Basic_price||'1000' %> </div>
+                    <div class="desc"><p><%= locals.desc_data.Basic_desc||'1000' %></p></div>
+                </div>
+                <div class="product-package-body">
+                    <div class="price">Rs <%= locals.desc_data.Standard_price %></div>
+                    <div class="desc"><%= locals.desc_data.Standard_desc||'1000' %></div>
+                </div>
+                <div class="product-package-body">
+                    <div class="price">Rs <%= locals.desc_data.Premium_price %></div>
+                    <div class="desc"> <%= locals.desc_data.Premium_desc||'1000' %></div>
+                </div>
+
+                <div class="product-package-footer">
+                    <!-- <a >Hire</a> -->
+                    <p id="hire-btn" style="cursor: pointer; display: inline;">Hire</p>
+
+
+                    <form action="/checkout/<%=locals.User_id %>/<%=locals.Gig_id %>" method="post">
+                        <div id="checkout">
+                            <label for="amount">Select amount</label>
+                            <select name="payamount" id="amount">
+                                <option value="<%= locals.desc_data.Basic_price||'1000' %>"><%= locals.desc_data.Basic_price||'1000' %></option>
+                                <option value="<%= locals.desc_data.Standard_price %>"><%= locals.desc_data.Standard_price %></option>
+                                <option value="<%= locals.desc_data.Premium_price %>"><%= locals.desc_data.Premium_price %></option>
+                            </select>
+                            <button type="submit">Checkout</button>
+                        </div>
+                    </form>
+
+                </div>
+
+               
+            </div>
+            <pre>
+
+
+                    </pre>
+            <div class="product-description">
+                <h5 class="Product-Description-title">
+                    Product Description
+                </h5>
+                <p class="Product-Description-body">
+                    <%= locals.desc_data.Gig_desc||'1000' %>
+                    <!-- Get your videos as the Highest ranking Have a lot of active fans worldwide including USA, UK, and
+                    other top countries.
+                    Spread your videos among all interested fans on social affiliated media
+                    This is an all-in-one offering you'll find nowhere else, executed at a highly-professional grade.
+                    Order now at this
+                    limited-time pricing that won't last long.We offer you the below opportunities with high performance
+                    Get your videos as the Highest ranking Have a lot of active fans worldwide including USA, UK, and
+                    other top countries.
+                    Spread your videos among all interested fans on social affiliated media -->
+                </p>
+
+            </div>
+
+            <pre>
+
+
+                    </pre>
+
+            <div class="Seller-Info container">
+                <h5 class="" style="text-align: center;">
+                    Seller Info
+                </h5>
+
+                <div class="Seller-head">
+                    <div class="Seller-img">
+                        <a href="/profile/<%= locals.User_id %>/<%= locals.desc_data.seller_id %> "><img src="/<%= locals.desc_data.User_pfimg ||'Pf.png'%>" alt=""></a>
+                        <!-- <img src="/Pf.png" alt=""> -->
+                    </div>
+                    <div class="seller-details" style="line-height: normal;">
+                        <!-- <br> -->
+                        <p><big><%= locals.desc_data.Seller_name||'1000' %></big></p>
+                        <!-- <p>java developer</p> -->
+                    </div>
+                </div>
+
+                <div class="Seller-body" style="text-align:center">
+                    <p class="seller-desc">
+                        <%= locals.desc_data.Seller_info||'professional web developer' %>
+                    </p>
+                </div>
+
+            </div>
+            <pre>
+
+                    </pre>
+                    
+            <div class="Rating-section">
+                <div><big>Ratings</big> <span class="Rating-count">(<%= locals.desc_data.Gig_ratcnt||'0' %>)</span></div>
+                <pre>
+
+                            </pre>
+                <div class="Rating">
+                    <li class="Rat-row">
+                        <label for="file5">5 Star</label>
+                        <progress id="file5" value="<%= locals.desc_data.Gig_rat[4]||'0' %>" max="<%= locals.desc_data.Gig_ratcnt||'0' %>"> </progress>
+                        <div class="Rat-cnt">(<%= locals.desc_data.Gig_rat[4]||'0' %>)</div>
+                    </li>
+                    <li class="Rat-row">
+                        <label for="file4">4 Star</label>
+                        <progress id="file4" value="<%= locals.desc_data.Gig_rat[3]||'0' %>" max="<%= locals.desc_data.Gig_ratcnt||'0' %>"> </progress>
+                        <div class="Rat-cnt">(<%= locals.desc_data.Gig_rat[3]||'0' %>)</div>
+                    </li>
+                    <li class="Rat-row">
+                        <label for="file3">3 Star</label>
+                        <progress id="file3" value="<%= locals.desc_data.Gig_rat[2]||'0' %>" max="<%= locals.desc_data.Gig_ratcnt||'0' %>"> </progress>
+                        <div class="Rat-cnt">(<%= locals.desc_data.Gig_rat[2]||'0' %>)</div>
+                    </li>
+                    <li class="Rat-row">
+                        <label for="file2">2 Star</label>
+                        <progress id="file2" value="<%= locals.desc_data.Gig_rat[1]||'0' %>" max="<%= locals.desc_data.Gig_ratcnt||'0' %>"> </progress>
+                        <div class="Rat-cnt">(<%= locals.desc_data.Gig_rat[1]||'0' %>)</div>
+                    </li>
+
+                    <li class="Rat-row">
+                        <label for="file1">1 Star</label>
+                        <progress id="file1" value="<%= locals.desc_data.Gig_rat[0]||'0' %>" max="<%= locals.desc_data.Gig_ratcnt||'0' %>"> </progress>
+                        <div class="Rat-cnt">(<%= locals.desc_data.Gig_rat[0]||'0' %>)</div>
+                    </li>
+                </div>
+            </div>
+
+            <div class="review-section">
+
+
+                <div><big>Reviews</big> <span class="review-count">(<%= locals.desc_data.Gig_ratcnt||'0' %>)</span></div>
+                <pre>
+                        </pre>
+                <!-- *old rev -->
+                <!-- <div class="review">
+                            <div class="review-header">
+                                <img src="Pf.png" alt="" class="review-user-profile-image">
+                                <p class="user-name"><big>Chandra Sekhar</big></p>
+                            </div>
+        
+                            <div class="review-desc">
+                                <p>always a pleasure - great work, with results improving every time. recommended.</p>
+                            </div>
+                        </div>
+                        <div class="review">
+                            <div class="review-header">
+                                <img src="Pf.png" alt="" class="review-user-profile-image">
+                                <p class="user-name"><big>Chandra Sekhar</big></p>
+                            </div>
+        
+                            <div class="review-desc">
+                                <p>always a pleasure - great work, with results improving every time. recommended.</p>
+                            </div>
+                        </div> -->
+
+                <% for(let j=0;j<locals.desc_data.Gig_revs.length;j++){ %> 
+                <div class="testimonial-box">
+
+
+                    <div class="box-top">
+
+                        <!-- profile-->
+                        <div class="profile">
+                            <!--img-->
+                            <div class="profile-img">
+                                <img src="/<%=locals.desc_data.Gig_revs[j].reviewerpf||'tn1.jpg' %> ">
+                            </div>
+                            <!-- username and name-->
+                            <div class="name-user">
+                                <strong><%= locals.desc_data.Gig_revs[j].reviewername||"chandra" %> </strong>
+                                <!-- <span>royin123</span>-->
+                            </div>
+                        </div>
+
+                        <div class="ratt">
+                            <p class="ratval" style="text-align: center; color:cornflowerblue;font-weight: 600;">
+                                <%= locals.desc_data.Gig_revs[j].reviewerrating||'2' %></p>
+                        </div>
+
+                    </div>
+                    <!-- comments-->
+                    <div class="cliet-comments">
+                        <p>
+                            <%= locals.desc_data.Gig_revs[j].review||"chandra's review" %> 
+                            <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, soluta? -->
+                        </p>
+                    </div>
+                </div>
+                <% } %> 
+            </div>
+
+        </div>
+    </div>
+
+
+    <div id="footer">
+        <%- include('./partials/footer.ejs') %> 
+    </div>
+</body>
+
+</html>

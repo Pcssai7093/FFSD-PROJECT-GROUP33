@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/homepage.css">
+    <link rel="stylesheet" href="/navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        body{
+        }
+    </style>
+</head> 
+
+
+
+
+
+<body>
+    <%- include('./partials/navbar') %> 
+    
+   <div class="filters-mobile">
+    <div class="sort-btn"> Sort</div>
+    <div class="filter-btn">Filter</div>
+    </div>
+
+    <div class="mobsort-menu">
+        <h5 style="padding:5px 5px ; text-align:center;"> Sort by </h5>
+        <!-- <hr> -->
+        <ul class="mob-menu">
+            <li> <input type="radio" name="deltime" id="d1">
+                <label for="id">Price <span style="color:rgb(104, 104, 104)">(low to high)</span></label></li>
+                <li><input type="radio" name="deltime" id="d2">
+                    <label for="id">Price <span style="color:rgb(104, 104, 104)">(high to low)</span></label></li>
+                <li><input type="radio" name="deltime" id="d3">
+                <label for="id">Newest First </label></li>
+                <li>
+                    <input type="radio" name="deltime" id="d4">
+                     <label for="id">Newest Last</label>
+                </li>
+        </ul>
+    </div>
+
+    <div class="cat-menu">
+        <div><a href="#">Web development</a></div>
+        <div><a href="#">Cloud computing</a></div>
+        <div><a href="#">Programming</a></div>
+        <div><a href="#">Communication networks</a></div>
+        <div><a href="#">Machine learning</a></div>
+        <div><a href="#">Game development</a></div>
+    </div>
+<pre>
+</pre>
+    <!-- <img src="/banner.jpg" alt="" style="width:100%;height:200px"> -->
+   <div class="main-cont">
+   
+    <div  class="filters-section">
+        <br>
+        <br>
+      
+        <form action="/home/search/<%=locals.User_id||''%>" method="post">
+            <div class="search-container1">
+                <table class="search-container2" >
+                    <tr>
+                       <td><input type="text" class="search-bar" name="search_bar" id="" placeholder="Search"></td>
+                       <td><button  style="color:white;border:none;background-color:#79c7ff; border-radius: 50%;"><i class="fa fa-search"></i></button></td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+            <!-- <div class="search-container1">
+                <table class="search-container2" >
+                    <tr>
+                       <td><input type="text" class="search-bar" name="" id="" placeholder="Search"></td>
+                       <td><button  style="border:none; background-color: white; border-radius: 50%;"><i class="fa fa-search"></i></button></td>
+                    </tr>
+                </table>
+            </div> -->
+    
+
+       <form action="/home/<%=locals.User_id||''%>" method="post"> 
+
+        <div class="form-check">
+            <h5>Categories</h5>
+                <ul class="ft">
+                    <li><input type="checkbox" name="cat" id="c1" value="web development">
+                        <label for="c1">Web development</label></li>
+                    <li> <input type="checkbox" name="cat" id="c2" value="cloud computing">
+                        <label for="c2">Cloud Computing</label></li>
+                    <li> <input type="checkbox" name="cat" id="c3" value="programming">
+                        <label for="c3">Programming</label></li>
+                    <li><input type="checkbox" name="cat" id="c4" value="communication networks">
+                        <label for="c4">Communication networks</label></li>
+                    <li><input type="checkbox" name="cat" id="c5" value="machine learning">
+                        <label for="c4">Machine learning</label></li>
+                    <li><input type="checkbox" name="cat" id="c6" value="game development">
+                        <label for="c4">Game development</label></li>
+                </ul>                 
+        </div>
+
+        <div class="form-check">
+            <h5>Sort By</h5>
+            <ul class="ft">
+                <li> <input type="radio" name="sort" id="s1" value="1">
+                    <label for="s1">Price <span style="color:rgb(255, 255, 255)">(low to high)</span></label></li>
+                    <li><input type="radio" name="sort" id="s2" value="2">
+                        <label for="s2">Price <span style="color:rgb(255, 248, 248)">(high to low)</span></label></li>
+                    <li><input type="radio" name="sort" id="s3" value="3" checked="true">
+                    <label for="s3">Newest First </label></li>
+                    <li>
+                        <input type="radio" name="sort" id="s4" value="4">
+                         <label for="s4">Newest Last</label>
+                    </li>
+            </ul>
+        </div>
+        
+           <div class="form-group">
+               <h5>Price range </h5>
+                <ul class="ft">
+                    <li><label for="price-rangef">From:</label>
+                        
+                <input type="text" name="f1" id="price-rangef" placeholder="From" value="0" style="color:black">
+            </li>
+            <br>
+                    <li><label for="price-ranget">To:</label>
+                        
+                <input type="text" name="f2" id="price-ranget" placeholder="To" value="10000" style="color:black">
+            </li>
+                </ul>
+           </div>
+           <br>
+
+           <!-- <div class="form-check">
+            <h5>Delivery time</h5>
+                <ul class="ft">
+                    <li><input type="checkbox" name="deltime" id="d1">
+                        <label for="id">< 24 hrs</label></li>
+                    <li> <input type="checkbox" name="deltime" id="d2">
+                        <label for="id">< 48 hrs</label></li>
+                    <li> <input type="checkbox" name="deltime" id="d3">
+                        <label for="id">< 4 days</label></li>
+                    <li><input type="checkbox" name="deltime" id="d4">
+                        <label for="id">> 4 days</label></li>
+                </ul>                 
+        </div> -->
+        <br>    
+        <button type="submit" id="filter-btn">Apply</button>
+       </form> 
+       <br>
+       <br>
+    </div> 
+        
+    <div  id="gig-section">
+
+        <% for(let i=0;i<locals.gig_data.length;i++){ %> 
+            <div class="card gig">
+                <img src="/<%= locals.gig_data[i].tnimg||'' %> "alt="image" class="card-img-top tbn-img" style="width:248.5px; height:200px;">
+                <div class="card-body">
+                    <img src="/<%= locals.gig_data[i].User_pfimg||'HPprofileimg1.png' %>" alt="logo" class="gig-logo" style="width:30px;height:30px; border-radius: 50%; float:left;">
+                <h5 class="card-title"><%= locals.gig_data[i].user_name||'default' %> </h5>
+                 <%= locals.gig_data[i].data_desc %>
+                 <div class="rating-cont">
+                     <p class="rating-value" style="display: inline;"><%= locals.gig_data[i].gig_rating||'4.3' %></p>
+                    <i class="fa fa-star rating-icon" style="color:cornflowerblue;"></i>
+                </div>
+                
+                    <form action="/wishlist/<%= locals.gig_data[i].mainuser_id||'' %>" method="post">
+                        <input type="text" name="gigid" value="<%= locals.gig_data[i].gig_id||'' %>" hidden>
+                        <button type="submit" style="width:0; height:0; background-color: white; border:none;"> <i class="fa fa-bookmark-o wishlist-icon"></i></button>
+                    </form>
+                    <!-- <i class="fa fa-bookmark-o wishlist-icon"></i> -->
+                    <i class="wishlist-icon-cont" style="display:none;"><%= locals.gig_data[i].gig_id||'' %></i>
+                   
+                </div>
+                <div class="card-footer text-end position-relative">
+                    <a href="/descpage/<%= locals.gig_data[i].mainuser_id||'' %>/<%= locals.gig_data[i].gig_id||'' %>"><button class="gig-btn" style="float:left">Hire Now</button></a>
+                    <p style="position:absolute; top:0; right:10px;color:rgb(104, 104, 104);">Starting From:</p>
+                    <p class="price" style="position:absolute; bottom:-10px; right:10px">Rs-<%= locals.gig_data[i].price %> \-</p>
+                </div>
+            </div>
+        <% } %>
+
+        
+    </div>
+
+     
+   </div>
+
+   <%- include('./partials/footer.ejs') %> 
+   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+   <script src="https://kit.fontawesome.com/392db2820f.js" crossorigin="anonymous"></script>
+   <script defer src="/homepage.js"></script>
+   <script defer src="/navbar.js"></script>
+</body>
+
+
+</html>

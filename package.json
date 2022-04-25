@@ -1,0 +1,21 @@
+{
+  "name": "ffsd-final",
+  "version": "1.0.0",
+  "description": "ffsd final server",
+  "main": "index.js",
+  "engines":{
+    "node":"12.11.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node index.js"
+  },
+  "author": "chandra sekhar sai potti",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.8"
+  }
+}

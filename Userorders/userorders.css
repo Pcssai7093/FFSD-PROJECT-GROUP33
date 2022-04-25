@@ -1,0 +1,43 @@
+
+
+.order-container{
+    width:80%;
+    margin:10px auto;
+    display: flex;
+    padding-bottom: 30px;
+    /* border-bottom: 2px solid cornflowerblue; */
+}
+
+.gig-cont{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:50%;
+    margin:1 auto;
+}
+
+.order-details{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    width:50%;
+
+}
+
+.report-form{
+    display: none;
+}
+
+.report-form.active{
+    display: block;
+}
+
+@media screen and (max-width:900px){
+    .order-container{
+        flex-direction: column;
+    }
+    .gig-cont,.order-details{
+        width:100%;
+    }
+}

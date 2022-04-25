@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Transactions</title>
+    <link rel="stylesheet" href="/adminnavbar.css">
+    <link rel="stylesheet" href="/adminusers.css">
+    <script defer src="/adminusers.js"></script>
+</head>
+<body>
+    <%- include('./partials/adminnavbar.ejs') %> 
+    <% for(let i=0;i<locals.trans_data.length;i++){ %> 
+        <div class="usercont">
+            <div class="userhead">
+                <h3>Transaction_id:<%= locals.trans_data[i]._id %> </h3>
+
+                <div class="menu-icon">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+            <div class="userbody">
+              <p>Time:<%= locals.trans_data[i].updatedAt%></p>
+              <p>Service_id:<%= locals.trans_data[i].gigid %> </p>
+              <p>User_id:<%= locals.trans_data[i].userid %></p>
+              <p>Amount:<%= locals.trans_data[i].amount %></p>
+              <p>Rating:<%= locals.trans_data[i].rating %></p>
+              <p>Review:<%= locals.trans_data[i].review %></p>
+              <p>Reports:</p>
+              <% for(let j=0;j<locals.trans_data[i].reports.length;j++){ %>
+                <p><%= locals.trans_data[i].reports[j] %> </p>
+                <% } %>  
+            </div>
+        </div>
+    <% } %> 
+    <pre>
+
+
+        
+    </pre>
+</body>
+</html>

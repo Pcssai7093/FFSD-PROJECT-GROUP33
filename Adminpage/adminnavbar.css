@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+}
+
+
+body{
+    background-image: url('/banner2.png');
+    color:white;
+}
+#uppernav {
+    width: 100%;
+    height: 20px;
+    /* background-color: cornflowerblue; */
+}
+
+#nav-bar {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: 20px 0;
+    background-color: cornflowerblue;
+    box-shadow: 0px 0px 3px black;
+    z-index: 2;
+}
+
+#nav-list {
+    text-align: center;
+    list-style-type: none;
+}
+
+#nav-list li {
+    display: inline;
+    padding: 0 50px;
+}
+
+#nav-list a {
+    color: white;
+    font-size: large;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-decoration: none;
+}
+
+#nav-list a.active{
+    border-bottom: 2px solid white;
+}
+
+#logout-icon{
+    color: white;
+    font-size: large;
+    float:right;
+    position: fixed;
+    right:20px;
+    bottom:20px;
+}

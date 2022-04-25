@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+}
+body{
+    /* background-color: gainsboro; */
+    /* padding: 20px; */
+    font-style:'Roboto', sans-serif;
+}
+
+.heading{
+    text-align: center;
+}
+
+
+.bdy{
+    display: flex;
+    /* margin-top: 100px; */
+}
+
+.section-1{
+    display: table;
+    width:50%;
+    border-spacing: 40px;
+}
+
+.row-section{
+    width:100%;
+    display:table-row;
+}
+
+.row-section label,.row-section input[type=text],.row-section textarea,.row-section select{
+    display:table-cell;
+    /* text-align: end; */
+    vertical-align: top;
+}
+
+.row-section button{
+    display:table-cell;
+}
+
+.row-section input[type=text]{
+    width:100%;
+    height:50px;
+    font-size: large;
+}
+
+
+
+.row-section textarea,select{
+    width:100%;
+}
+
+
+
+
+input[type=file]{
+    width:100%;
+    padding: 3px;
+}
+
+.Cbtn{
+    padding:2px;
+    border-radius:4px;
+    color:white;
+    background-color: rgb(49, 134, 214);
+    border:2px solid white;
+    font-size: 15px;
+  padding: 10px;
+  width: 150px;
+  height: 10px;
+  padding-bottom: 30px;
+}
+
+
+
+.Ctxt{
+    padding-left: 100px;
+}
+
+#gig-title{
+    width:100%;
+    
+}
+
+#gig-description{
+    width:100%;
+}
+
+#gig-category{
+    width:100%;
+}
+
+.product-gallery-conatiner{
+    width:50%;
+    margin:10px auto;
+}
+
+
+.m{
+    width:100%;
+    display:none;
+    box-shadow: 0px 0px 5px;
+}
+
+
+.gal-img{
+    box-shadow: 0px 0px 5px;
+    cursor: pointer;
+    width:15%;
+    opacity: 0.5;
+}
+
+.image-grid{
+    margin-top:5px;
+    width:100%;
+    border:2px solid gray;
+}
+
+
+
+
+
+
+
+
+.submit-btn {
+    width:100%;
+    text-align: center;
+}
+
+.submit-btn .btn{
+    /* margin:0px auto; */
+} 
+
+.err{
+    color:red;
+}
+
+
+/* * preview btn */
+
+#preview-btn{
+    position:fixed;
+    right:50px;
+    bottom:50px;
+    background-color: red;
+    border:none;
+    border-radius: 50%;
+    width:50px;
+    height:50px;
+}
+
+#preview-btn a{
+    text-decoration: none;
+    color: white;
+}
+
+@media screen and (max-width:1100px){
+    .bdy{
+        
+        flex-direction: column;
+    }
+    .section-1{
+        width:100%;
+    }   
+}
+
+@media screen and (max-width:500px){
+
+}
+

@@ -29,10 +29,10 @@
                 <p>Seller_id:<%= locals.service_data[i].Seller_id %></p>
                 <p>Basic_price:<%= locals.service_data[i].Basic_price %></p>
                 <p>Service_block_status:<%=locals.service_data[i].Gig_Block||'false'%></p>
-                <form action="/servicedelete/<%= locals.service_data[i]._id||'' %>" method="post" style="float: left;padding-right: 10px;">
+                <form action="/admin/serviceBlock/<%= locals.service_data[i]._id||'' %>" method="post" style="float: left;padding-right: 10px;">
                     <button type="submit" style="cursor:pointer;color:white;background-color:orange;border:3px solid white;border-radius: 10px;">block</button>
                 </form>
-                <form action="/serviceUnblock/<%= locals.service_data[i]._id||'' %>" method="post">
+                <form action="/admin/serviceUnblock/<%= locals.service_data[i]._id||'' %>" method="post">
                     <button type="submit" style="cursor:pointer;color:white;background-color:rgb(77, 255, 0);border:3px solid white;border-radius: 10px;">Unblock</button>
                 </form>
             </div>

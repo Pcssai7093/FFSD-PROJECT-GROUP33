@@ -1,5 +1,6 @@
 const mongoose=module.require('mongoose');
 const schm=mongoose.Schema;
+const bcrypt=module.require("bcrypt")
 
 const userschm=new schm({
     
@@ -30,7 +31,7 @@ const userschm=new schm({
         required:true,
         unique:true
     },
-    User_password:{
+    password:{
         type:String,
         required:true
     },
@@ -51,8 +52,17 @@ const userschm=new schm({
 
 },{timestamps:true},);
 
-
-
+userschm.pre("save",async function (next){
+    // console.log(this.password);
+    const salt=await bcrypt.genSalt();
+    this.password=await bcrypt.hash(this.password,salt)
+    console.log("before user created");
+    next();
+})
 
 const userdatamodel=mongoose.model('user-datas',userschm);
 module.exports=userdatamodel;
+
+
+
+

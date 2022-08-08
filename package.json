@@ -3,19 +3,24 @@
   "version": "1.0.0",
   "description": "ffsd final server",
   "main": "index.js",
-  "engines":{
-    "node":"12.11.1"
+  "engines": {
+    "node": "12.11.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node index.js"
+    "start": "node index.js"
   },
   "author": "chandra sekhar sai potti",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "body-parser": "^1.19.2",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.1",
     "ejs": "^3.1.6",
     "express": "^4.17.3",
-    "mongoose": "^6.2.8"
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.8",
+    "nodemon": "^2.0.19"
   }
 }

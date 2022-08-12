@@ -93,7 +93,7 @@
                     </h5>
 
 
-                    <form action="/addreview/<%= locals.gig_data[i].mainuser_id %>/<%= locals.gig_data[i].transaction_id %>" method="post" >
+                    <form action="/orders/addreview/<%= locals.gig_data[i].mainuser_id %>/<%= locals.gig_data[i].transaction_id %>" method="post" >
                         <label for="review" class="gig_review"></label>
                         <textarea name="review" id="review" cols="30" rows="6" style="width:100%;"><%=locals.gig_data[i].review ||"write a review" %> </textarea>
                         <br>
@@ -111,7 +111,7 @@
                         <button type="submit">Submit </button>
                     </form>
 
-                    <form class="report-form" action="/addreport/<%= locals.gig_data[i].mainuser_id %>/<%= locals.gig_data[i].transaction_id %>" method="post">                        
+                    <form class="report-form" action="/orders/addreport/<%= locals.gig_data[i].mainuser_id %>/<%= locals.gig_data[i].transaction_id %>" method="post">                        
                         <textarea name="report_text" id="report-text" cols="30" rows="5" style="width:100%">Write report here</textarea>                        
                         <button type="submit">Submit Report</button>
                     </form>
